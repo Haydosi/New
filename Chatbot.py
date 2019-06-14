@@ -1,4 +1,4 @@
- import datetime, calendar, time
+import datetime, calendar, time
 from random import randrange
 QuitList = ['quit', ' Quit', 'QUIT', 'Goodbye', 'goodbye', 'Exit', 'exit', 'EXIT']
 
@@ -34,6 +34,46 @@ def money_help(ans):
         print('things you can do:')
         print('money amount, can I have money, upgrade')
 
+def minigame (ans, bananas):
+    if 'minigame' == ans:
+        from random import randrange
+        options = (1,2,3,4,5,6,7,8,9,10)
+        number = options[randrange(0,len(options))] 
+
+        yes = False
+        thing = True
+
+        while (yes is False): 
+            question = input('Would you like to play a game? [Y/N]')
+            question.lower()
+
+            if 'n' in question :
+                print ('Oh, ok')
+                time.sleep(3)
+                thing = False
+                yes = True
+
+            if 'y' in question :
+                print ('YaY!')
+                print ('Ok, I will think of a number from 1-10 and you must guess it')
+                yes = True
+
+        while(thing is True):
+            guess = int(input('Go on, guess'))
+
+            if guess < number :
+                print ('The number is higher')
+        
+            elif guess == number :
+                print ('Correct!!!')
+                time.sleep(3)
+                print (f'you were awarded 1 bananas')
+                bananas = bananas + 1
+                thing = False
+
+            elif guess > number :
+                print ('The number is lower')
+    return bananas
 def bananaHelp(ans):
     if 'banana help' == ans:
         print('bananas are a secondary currency which give you a money bonus')
@@ -251,8 +291,6 @@ def buy(ans, money, bananas, bprice, bmultiplier):
                 print('that\'s okay, you don\'t have to')
     return money, bananas, bprice, bmultiplier
 
-        #gives you bananas
-
 def bananaAmount (ans, bananas):
     options = ['banana amount', 'banana bank', 'check bananas', 'bbank']
     for option in options:
@@ -336,6 +374,7 @@ while Continue == True:
     Time (ans)
     Food (ans)
     Pokemon (ans)
+    bananas = minigame (ans, bananas)
     Zak (ans)
     Lel (ans)
     Zeke (ans)
