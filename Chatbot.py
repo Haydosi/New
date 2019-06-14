@@ -2,6 +2,12 @@ import datetime, calendar, time
 from random import randrange
 QuitList = ['quit', ' Quit', 'QUIT', 'Goodbye', 'goodbye', 'Exit', 'exit', 'EXIT']
 
+print ('Credits')
+
+print ('Hayden Ivins - Primary Coder')
+print ('Andrew Ivins - Advisor')
+print ('Lukas Rohwer - Primary Tester & Secondary Coder')
+time.sleep(3)
 
 def Welcome():
     print ('CHATBOT')
@@ -73,6 +79,9 @@ def minigame (ans, bananas):
 
             elif guess > number :
                 print ('The number is lower')
+            
+            else:
+                print ('Please type an integer(a whole number)')
     return bananas
 def bananaHelp(ans):
     if 'banana help' == ans:
