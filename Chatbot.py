@@ -20,7 +20,12 @@ def EnterName():
     name = input ('What is your name?')
     print (f'Hello {name}, nice to meet you. My name is Chatbot')
     print ('')
+    return name
 
+def recall_name(ans, name):
+    if 'name' in ans:
+        print(f'your name was {name}!')
+    
 def Help (ans):
     if 'help' == ans:
         print('things you can do:')
@@ -355,9 +360,8 @@ def impersonate(ans):
                 #pretends to be people
 
 Welcome()
-EnterName()
+name = EnterName()
 Continue = True
-
 money = 0
 money_gain = 1
 price = 5
@@ -369,6 +373,7 @@ while Continue == True:
     ans = input ('what would you like to know/do?')
     ans = ans.lower()
     Exit (ans)
+    recall_name(ans, name)
     Help (ans)
     money_help(ans)
     Time (ans)
