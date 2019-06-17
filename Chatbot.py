@@ -9,6 +9,8 @@ print ('Andrew Ivins - Advisor')
 print ('Lukas Rohwer - Primary Tester & Secondary Coder')
 time.sleep(3)
 
+#credit scene by lukas
+
 def Welcome():
     print ('CHATBOT')
     print ('\n')
@@ -186,7 +188,7 @@ def Edward (ans):
 def TophatElephant (ans):
     if 'tophatelephant' in ans:
         print ("No. Just no. We're not going down that rabbit hole again")
-            #caused a political split
+        #caused a political split
 
 def Leuca (ans):
     if 'leuca' in ans:
@@ -206,7 +208,7 @@ def Peely (ans):
         time.sleep(5)
         print("No, I don't want to talk about it")
         time.sleep(5)
-            #I'm mourning his death in the trailer
+        #I'm mourning his death in the trailer
 
 def Rohan (ans):
     if 'rohan' in ans:
@@ -242,7 +244,7 @@ def MoneyAmount (ans, money):
         if option in ans:
             print(f'You have ${money:.2f}')
             break
-                #tells you how much money you have
+            #tells you how much money you have
 
 def GiveMoney (ans, money, bmultiplier):
     options = ['give me money', 'can i have money', 'ask for money', 'beg for money', 'give money' ]
@@ -252,7 +254,7 @@ def GiveMoney (ans, money, bmultiplier):
             money = money + int(money_gain) * bmultiplier
             break
     return money
-        #main way to get money
+    #main way to get money
 
 def cheat_code (ans, money, price, money_gain):
     if 'cheat_code' in ans:
@@ -268,7 +270,7 @@ def cheat_code (ans, money, price, money_gain):
             amount = input('')
             money_gain = money_gain * int(amount)
     return money, price, money_gain
-        #cheats
+    #cheats
 
 def upgrade(ans, money, price, money_gain):
     if 'upgrade' in ans:
@@ -285,7 +287,7 @@ def upgrade(ans, money, price, money_gain):
         else:
             print('That\'s okay, you don\'t have do if you don\'t want to, you might not even have enough money!')
     return money, price, money_gain
-        #increases amount of money you get when you ask for money
+    #increases amount of money you get when you ask for money
 
 def buy(ans, money, bananas, bprice, bmultiplier):
     if 'buy' in ans:
@@ -366,7 +368,7 @@ def impersonate(ans):
             print('\n')
             print(options[randrange(0,len(options))])
 
-                #pretends to be people
+            #pretends to be people
 
 Welcome()
 name = EnterName()
@@ -429,4 +431,4 @@ while Continue == True:
 
 
 
-        #list of runnable functions
+    #list of runnable functions
