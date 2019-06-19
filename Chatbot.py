@@ -50,8 +50,7 @@ def money_help(ans):
 def minigame (ans, bananas):
     if 'minigame' == ans:
         from random import randrange
-        options = (1,2,3,4,5,6,7,8,9,10)
-        number = options[randrange(0,len(options))] 
+        number = randrange(1, 101) 
 
         yes = False
         thing = True
@@ -68,7 +67,7 @@ def minigame (ans, bananas):
 
             if 'y' in question :
                 print ('YaY!')
-                print ('Ok, I will think of a number from 1-10 and you must guess it')
+                print ('Ok, I will think of a number from 1-100 and you must guess it')
                 yes = True
 
         while(thing is True):
@@ -256,7 +255,7 @@ def GiveMoney (ans, money, bmultiplier):
     return money
     #main way to get money
 
-def cheat_code (ans, money, price, money_gain):
+def cheat_code (ans, money, price, money_gain,bananas):
     if 'cheat_code' in ans:
         ans2 = input('')
         if '$' == ans2:
@@ -269,7 +268,10 @@ def cheat_code (ans, money, price, money_gain):
         elif '$¡' == ans2:
             amount = input('')
             money_gain = money_gain * int(amount)
-    return money, price, money_gain
+        elif 'banana' == ans2:
+            amount = input('')
+            bananas = bananas + int(amount)
+    return money, price, money_gain, bananas
     #cheats
 
 def upgrade(ans, money, price, money_gain):
@@ -419,7 +421,7 @@ while Continue == True:
     hayden(ans)
     MoneyAmount (ans, money)
     money = GiveMoney (ans, money, bmultiplier)
-    (money, price, money_gain) = cheat_code (ans, money, price, money_gain)
+    (money, price, money_gain, bananas) = cheat_code (ans, money, price, money_gain, bananas)
     (money, price, money_gain) = upgrade(ans, money, price, money_gain)
     (money, bananas, bprice, bmultiplier) = buy(ans, money, bananas, bprice, bmultiplier)
     bananaAmount (ans, bananas)
